@@ -118,17 +118,6 @@ module.exports = {
         ],
     },
 
-    resolve: {
-        modules: [
-            "node_modules",
-            path.resolve(__dirname, 'src'),
-        ],
-        extensions: ['.js', '.json', '.css', 'less'],
-        alias: {
-            FayAntd: path.resolve(__dirname, 'src/lib/antd/lib/'),
-        }
-    },
-
     plugins: [
         new CleanPlugin(['public'], {
             'root': __dirname,
@@ -136,9 +125,7 @@ module.exports = {
             'dry': false,
         }),
         new CopyWebpackPlugin([
-            {from: __dirname + '/src/assets', to: __dirname + '/public/assets'},
             {from: __dirname + '/src/favicon.ico', to: __dirname + '/public/favicon.ico'},
-            {from: __dirname + '/src/faylogin.html', to: __dirname + '/public/faylogin.html'},
         ]),
         new webpack.DefinePlugin({
             'process.env': {
