@@ -1,7 +1,7 @@
 /**
  * Created by feichongzheng on 17/9/25.
  */
-import {ADD_TODO, TOGGLE_TODO, REMOVE_TODO} from './actionTypes';
+import {ADD_TODO, TOGGLE_TODO, REMOVE_TODO, FIND_TODOS} from './actionTypes';
 
 export default (state = [], action) => {
     switch (action.type) {

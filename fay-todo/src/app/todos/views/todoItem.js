@@ -3,6 +3,8 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {toggleTodo, removeTodo} from '../actions.js';
 
 const TodoItem = ({onToggle, onRemove, completed, text}) => (
     <li
@@ -24,4 +26,12 @@ TodoItem.propTypes = {
     text: PropTypes.string.isRequired
 };
 
-export default TodoItem;
+const mapDispatchToProps = (dispatch, ownProps) => {
+    const {id} = ownProps;
+    return {
+        onToggle: () => dispatch(toggleTodo(id)),
+        onRemove: () => dispatch(removeTodo(id))
+    }
+};
+
+export default connect(null, mapDispatchToProps)(TodoItem);

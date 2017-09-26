@@ -18,6 +18,7 @@
     "type": "git",
     "url": "https://github.com/love-fay/fay-sso"
   },
+  "proxy": "http://www.weather.eom.cn/",
   "devDependencies": {
     "ajv": "^5.2.2",
     "autoprefixer": "^7.1.4",
@@ -68,6 +69,7 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-immutable-state-invariant": "^2.0.0",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "reselect": "^3.0.1"
   }
 }

@@ -4,23 +4,24 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {toggleTodo, removeTodo} from '../actions.js';
-import {FilterType} from '../../constants.js';
 import TodoItem from './todoItem';
+import {selectVisibleTodos} from '../selector';
+
+let currentTodo = [];
 
 const TodoList = ({
-    todos, onToggleTodo, onRemoveTodo
+    todos
 }) => {
+    currentTodo = todos;
     return (
         <ul className="todo-list">
             {
                 todos.map((item) => (
                     <TodoItem
                         key={item.id}
+                        id={item.id}
                         text={item.text}
                         completed={item.completed}
-                        onToggle={() => onToggleTodo(item.id)}
-                        onRemove={() => onRemoveTodo(item.id)}
                     />
                 ))
             }
@@ -32,34 +33,19 @@ TodoList.propTypes = {
     todos: PropTypes.array.isRequired
 };
 
-const selectVisibleTodos = (todos, filter) => {
-    switch (filter) {
-        case FilterType.ALL:
-            return todos;
-        case FilterType.COMPLETED:
-            return todos.filter(item => item.completed);
-        case FilterType.UNCOMPLETED:
-            return todos.filter(item => !item.completed);
-        default:
-            throw new Error('unsupported filter');
-    }
-};
-
 const mapStateToProps = (state) => {
+    const newTodos = selectVisibleTodos(state);
+    if(newTodos.toString() === currentTodo.toString()) {
+        console.log('返回原来的todos');
+        return {
+            todos: currentTodo
+        };
+    }
+    console.log('返回新的todos');
     return {
-        todos: selectVisibleTodos(state.todos, state.filter)
+        todos: newTodos
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onToggleTodo: (id) => {
-            dispatch(toggleTodo(id));
-        },
-        onRemoveTodo: (id) => {
-            dispatch(removeTodo(id));
-        }
-    };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+export default connect(mapStateToProps, null)(TodoList);

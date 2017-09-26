@@ -7,9 +7,9 @@ import {connect} from 'react-redux';
 import {setFilter} from '../actions.js';
 
 const Link = ({active, children, onClick}) => {
-    if (active) {
-        return <b className="filter selected">{children}</b>
-    } else {
+    // if (active) {
+    //     return <b className="filter selected">{children}</b>
+    // } else {
         return (
             <a href="#" className="filter not-selected" onClick={(ev) => {
                 ev.preventDefault();
@@ -17,8 +17,8 @@ const Link = ({active, children, onClick}) => {
             }}>
                 {children}
             </a>
-        )
-    }
+        );
+    // }
 };
 
 Link.propTypes = {
@@ -27,11 +27,11 @@ Link.propTypes = {
     onClick: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-        active: state.filter === ownProps.filter
-    }
-};
+// const mapStateToProps = (state, ownProps) => {
+//     return {
+//         active: state.filter === ownProps.filter
+//     }
+// };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onClick: () => {
@@ -39,4 +39,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Link);
+export default connect(null, mapDispatchToProps)(Link);
