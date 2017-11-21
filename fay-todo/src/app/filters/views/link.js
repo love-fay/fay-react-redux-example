@@ -33,10 +33,15 @@ const mapStateToProps = (state, ownProps) => {
     }
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    onClick: () => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+    dispatch(setFilter(ownProps.filter));
+    const onClick = () => {
         dispatch(setFilter(ownProps.filter));
-    }
-});
+    };
+    onClick();
+    return {
+        onClick: onClick
+    };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Link);
