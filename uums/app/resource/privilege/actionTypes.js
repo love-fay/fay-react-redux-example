@@ -1,0 +1,7 @@
+/**
+ * Created by feichongzheng on 17/9/25.
+ */
+export const FIND_PRIVILEGE = 'PRIVILEGE/FIND';
+export const FIND_PRIVILEGE_FETCH = 'PRIVILEGE/FINDFETCH';
+export const FIND_PRIVILEGE_SUCCESS = 'PRIVILEGE/FINDSUCCESS';
+export const FIND_PRIVILEGE_ERROR = 'PRIVILEGE/FINDERROR';

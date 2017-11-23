@@ -1,0 +1,7 @@
+/**
+ * Created by feichongzheng on 17/9/25.
+ */
+export const FIND_APP_FOR_PAGE = 'APP/FINDFORPAGE';
+export const FIND_APP_FOR_PAGE_FETCH = 'APP/FINDFORPAGEFETCH';
+export const FIND_APP_FOR_PAGE_SUCCESS = 'APP/FINDFORPAGESUCCESS';
+export const FIND_APP_FOR_PAGE_ERROR = 'APP/FINDFORPAGEERROR';
