@@ -1,6 +1,5 @@
 # fay-react-redux-example
-这是一个正式项目删减后的demo，
-主要展示了项目的目录结构以及初步的一个架构思路
+利用react/redux开发大型项目的一个简单架构示例
 
 <p align="center">
   <a href="https://github.com/love-fay/fay-sso">
