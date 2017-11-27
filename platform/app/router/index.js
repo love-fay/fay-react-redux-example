@@ -13,6 +13,7 @@ let store = initStore();
 
 import Uums from '../../../uums';
 import Uc from '../../../uc';
+import 'FayAntd/style/index.js';
 
 const history = createBrowserHistory();
 
