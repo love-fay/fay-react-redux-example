@@ -4,10 +4,10 @@
   "description": "it's a management background of Fay's uums",
   "main": "src/index.js",
   "scripts": {
-    "start": "node --max_old_space_size=2048 node_modules/.bin/webpack-dev-server --config ./platform/webpack.config.js --color --progress",
-    "start-layout": "node --max_old_space_size=2048 node_modules/.bin/webpack-dev-server --config ./layout/webpack.config.js --color --progress",
-    "start-uums": "node --max_old_space_size=2048 node_modules/.bin/webpack-dev-server --config ./uums/webpack.config.js --color --progress",
-    "start-uc": "node --max_old_space_size=2048 node_modules/.bin/webpack-dev-server --config ./uc/webpack.config.js --color --progress",
+    "start": "node_modules/.bin/webpack-dev-server --config ./platform/webpack.config.js --color --progress",
+    "start-layout": "node_modules/.bin/webpack-dev-server --config ./layout/webpack.config.js --color --progress",
+    "start-uums": "node_modules/.bin/webpack-dev-server --config ./uums/webpack.config.js --color --progress",
+    "start-uc": "node_modules/.bin/webpack-dev-server --config ./uc/webpack.config.js --color --progress",
     "build": "set NODE_ENV=production && npx webpack --config ./webpack.pro.config.js --progress"
   },
   "private": true,
