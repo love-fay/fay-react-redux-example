@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import {Bundle} from '../../../../base';
-import load from 'bundle-loader?lazy&name=[Privilege]!./lazy';
+import load from 'bundle-loader?lazy&name=Privilege!./lazy';
 import reducer from './reducer';
 import sagas from './sagas';
 

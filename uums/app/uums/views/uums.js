@@ -10,6 +10,14 @@ import {RouterPaths} from '../../constants';
 import { error } from '../../../../base';
 import { Layout12 } from '../../../../layout';
 
+require.ensure([], (require) => {
+    require('../../user/lazy.js');
+}, 'User');
+
+require.ensure([], (require) => {
+    require('../../../../base/error/e404/lazy.js');
+}, 'E404');
+
 class Uums extends Component{
 
     componentWillMount(){
@@ -54,6 +62,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         switch (pathname){
             case RouterPaths.USER:
                 return <User {...ownProps}/>;
+            case '/uums/user2':
+                return <User2 {...ownProps}/>;
             default:
                 return <error.E404/>;
         }

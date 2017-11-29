@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import {Bundle} from '../../../base';
-import load from 'bundle-loader?lazy&name=[App]!./lazy';
+import load from 'bundle-loader?lazy&name=App!./lazy';
 
 const view = (props) => {
     return (

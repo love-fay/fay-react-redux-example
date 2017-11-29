@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import {Bundle} from '../../../base';
-import load from 'bundle-loader?lazy&name=[Layout12]!./lazy';
+import load from 'bundle-loader?lazy&name=Layout12!./lazy';
 
 const Layout12 = (props) => {
     return (

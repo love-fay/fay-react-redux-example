@@ -9,6 +9,7 @@ const CleanPlugin = require('clean-webpack-plugin');
 const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
+const webpackModule = require('./base/config/webpack/pro/module');
 
 module.exports = {
 
@@ -18,104 +19,7 @@ module.exports = {
         filename: 'js/[name]-[hash:8].js',
         chunkFilename: 'js/[name]-[id].[hash:8].bundle.js',
     },
-
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                modules: true,
-                            },
-                        },
-                        {
-                            loader: 'postcss-loader',
-                            options: {
-                                plugins: (loader) => [
-                                    require('autoprefixer')(),
-                                    require('cssnano')(),
-                                ],
-                            },
-                        },
-                    ],
-                }),
-            },
-            {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['react',
-                            ['env',{
-                                'targets': {
-                                    'browsers': ['last 2 versions', 'ie >= 9'],
-                                    'uglify': true
-                                },
-                                'modules': false,
-                                'loose': true,
-                                'useBuiltIns': true,
-                            },
-                            ]
-                        ],
-                        plugins: [
-                            'babel-plugin-transform-class-properties',
-                            'babel-plugin-syntax-dynamic-import',
-                            [
-                                'babel-plugin-transform-runtime', {
-                                    'helpers': true,
-                                    'polyfill': true,
-                                    'regenerator': true,
-                                },
-                            ],
-                            [
-                                'babel-plugin-transform-object-rest-spread', {
-                                    'useBuiltIns': true
-                                },
-                            ],
-                            [
-                                'import',
-                                {
-                                    "libraryName": "antd",
-                                    "style": true,
-                                }
-                            ]
-                        ],
-                    },
-                },
-            },
-            {
-                test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[path][name].[ext]',
-                        outputPath: 'images',
-                    },
-                },
-            },
-            {
-                test: /\.less$/,
-                use: ExtractTextPlugin.extract({
-                    use: [{
-                        loader: 'css-loader',
-                    }, {
-                        loader: 'less-loader',
-                    }],
-                    fallback: 'style-loader',
-                }),
-            },
-            {
-                test: /\.gz$/,
-                enforce: 'pre',
-                use: 'gzip-loader',
-            },
-        ],
-    },
+    module: webpackModule,
 
     resolve: {
         modules: [
@@ -150,7 +54,7 @@ module.exports = {
         }),
         new PreloadWebpackPlugin({
             rel: 'preload',
-            include: 'asyncChunks'
+            include: ['Uc','App']
         }),
         new ExtractTextPlugin({
             filename: 'css/[name].[contenthash].css',

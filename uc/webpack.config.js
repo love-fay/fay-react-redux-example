@@ -8,8 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const path = require('path');
-const autoprefixerFromPostcss = require('autoprefixer');
-const cssnanoFromPostcss = require('cssnano');
+const webpackModule = require('../base/config/webpack/dev/module');
 
 module.exports = {
 
@@ -23,103 +22,7 @@ module.exports = {
         require('webpack-require-http')
     ],
 
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                modules: true,
-                            },
-                        },
-                        {
-                            loader: 'postcss-loader',
-                            options: {
-                                plugins: (loader) => [
-                                    autoprefixerFromPostcss(),
-                                    cssnanoFromPostcss(),
-                                ],
-                            },
-                        },
-                    ],
-                }),
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader?cacheDirectory',
-                    options: {
-                        presets: ['react',
-                            ['env',{
-                                'targets': {
-                                    'browsers': ['last 2 versions', 'ie >= 9'],
-                                },
-                                'modules': false,
-                                'loose': true,
-                                'useBuiltIns': true,
-                                'debug': true,
-                            },
-                            ]
-                        ],
-                        plugins: [
-                            'babel-plugin-transform-class-properties',
-                            'babel-plugin-syntax-dynamic-import',
-                            [
-                                'babel-plugin-transform-runtime', {
-                                'helpers': true,
-                                'polyfill': true,
-                                'regenerator': true,
-                            },
-                            ],
-                            [
-                                'babel-plugin-transform-object-rest-spread', {
-                                'useBuiltIns': true
-                            },
-                            ],
-                            [
-                                'import',
-                                {
-                                    "libraryName": "antd",
-                                    "style": true,
-                                }
-                            ]
-                        ],
-                    },
-                },
-            },
-            {
-                test: /\.less$/,
-                use: ExtractTextPlugin.extract({
-                    use: [{
-                        loader: 'css-loader',
-                    }, {
-                        loader: 'less-loader',
-                    }],
-                    fallback: 'style-loader',
-                }),
-            },
-            {
-                test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[path][name].[ext]',
-                        outputPath: 'images',
-                    },
-                },
-            },
-            {
-                test: /\.js$/,
-                use: ['source-map-loader'],
-                enforce: 'pre',
-            },
-        ],
-    },
+    module: webpackModule,
 
     resolve: {
         modules: [
