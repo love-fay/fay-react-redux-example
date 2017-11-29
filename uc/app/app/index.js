@@ -8,9 +8,7 @@ import load from 'bundle-loader?lazy&name=App!./lazy';
 const view = (props) => {
     return (
         <Bundle load={load}>
-            {(View) => {
-                return <View {...props}/>
-            }}
+            {(View) => <View {...props}/>}
         </Bundle>
     );
 };

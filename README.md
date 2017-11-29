@@ -43,7 +43,7 @@
 > preload是预加载并且是并行加载（非阻塞）但不执行，对于这个demo这方面的知识就不详细说了
 
 > 还有一种利用require.ensure进行预加载，其实按需加载也是用require.ensure，不过这里用法是将它预先下载下来，
-> 并不执行，等需要的时候再运行, 再该demo中preload针对了uc模块，require.ensure针对了uums模块，
+> 在该demo中preload针对了uc模块，require.ensure针对了uums模块，
 > npm start运行后根据谷歌浏览器调试工具便可清晰地看到，以及区别
 
 > 各模块都可以单独运行，都拥有独立webpack配置文件，因项目原因以及业务应用开发，不会发至npm上，
