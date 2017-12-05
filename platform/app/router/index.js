@@ -13,6 +13,8 @@ let store = initStore();
 
 import Uums from '../../../uums';
 import Uc from '../../../uc';
+import LocaleProvider from 'antd/lib/locale-provider';
+import zhCn from 'antd/lib/locale-provider/zh_CN';
 import 'FayAntd/style/index.js';
 
 const history = createBrowserHistory();
@@ -27,19 +29,21 @@ const HomePage = () => {
 
 export default () => {
     return (
-        <Provider store={store}>
-            <ConnectedRouter history={history}>
-                <Switch>
-                    <Route exact strict path="/" component={HomePage}/>
-                    <Route path="/504" component={error.E504}/>
-                    <Route path='/404' component={error.E404}/>
-                    <Route path='/401D3' component={error.E401D3}/>
-                    <Route path='/login' component={Login}/>
-                    <Route path={RouterPaths.UUMS} component={Uums}/>
-                    <Route path={RouterPaths.UC} component={Uc}/>
-                    <Route component={error.E404}/>
-                </Switch>
-            </ConnectedRouter>
-        </Provider>
+        <LocaleProvider locale={zhCn}>
+            <Provider store={store}>
+                <ConnectedRouter history={history}>
+                    <Switch>
+                        <Route exact strict path="/" component={HomePage}/>
+                        <Route path="/504" component={error.E504}/>
+                        <Route path='/404' component={error.E404}/>
+                        <Route path='/401D3' component={error.E401D3}/>
+                        <Route path='/login' component={Login}/>
+                        <Route path={RouterPaths.UUMS} component={Uums}/>
+                        <Route path={RouterPaths.UC} component={Uc}/>
+                        <Route component={error.E404}/>
+                    </Switch>
+                </ConnectedRouter>
+            </Provider>
+        </LocaleProvider>
     );
 }
