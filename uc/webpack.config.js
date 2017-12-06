@@ -20,9 +20,6 @@ module.exports = {
         filename: 'js/[name].[hash:8].bundle.js',
         chunkFilename: 'js/[name]-[id].[hash:8].bundle.js',
     },
-    externals:[
-        require('webpack-require-http')
-    ],
 
     module: webpackModule,
 
