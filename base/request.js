@@ -51,11 +51,13 @@ const promise = (req) => {
 };
 
 const get = (apiPath, data) => {
+    console.log('爱死get');
     const req = new Request(apiPath, reqGetBrace('GET', data));
     return promise(req);
 };
 
 const post = (apiPath, data) => {
+    console.log('爱死post');
     const req = new Request(apiPath, reqPostBrace('POST', data));
     return promise(req);
 };

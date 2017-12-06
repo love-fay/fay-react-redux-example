@@ -13,9 +13,10 @@ let store = initStore();
 
 import Uums from '../../../uums';
 import Uc from '../../../uc';
+import 'FayAntd';
 import LocaleProvider from 'antd/lib/locale-provider';
 import zhCn from 'antd/lib/locale-provider/zh_CN';
-import 'FayAntd/style/index.js';
+import 'FayAntd/locale-provider';
 
 const history = createBrowserHistory();
 

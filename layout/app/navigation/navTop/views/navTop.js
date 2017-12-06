@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import Menu from 'antd/lib/menu';
-import 'FayAntd/menu/style/index.js';
+import 'FayAntd/menu';
 import style from './style.css';
 import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';

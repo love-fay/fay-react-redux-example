@@ -10,6 +10,8 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 const path = require('path');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const webpackModule = require('../base/config/webpack/dev/module');
+const apiServer = require('../base/config/webpack/dev/apiServer');
+const resolve = require('../base/config/webpack/pro/resolve');
 
 module.exports = {
 
@@ -24,16 +26,7 @@ module.exports = {
     ],
     module: webpackModule,
 
-    resolve: {
-        modules: [
-            "node_modules",
-            path.resolve(__dirname, 'app')
-        ],
-        extensions: ['.js', '.json', '.css', 'less'],
-        alias: {
-            FayAntd: path.resolve(__dirname, '../lib/antd/lib/'),
-        }
-    },
+    resolve: resolve,
 
     plugins: [
         new CleanPlugin(['public'], {
@@ -50,9 +43,7 @@ module.exports = {
                 NODE_ENV: JSON.stringify('development'),
             },
             'target': {
-                server: {
-                    uums: JSON.stringify('http://127.0.0.1:8080/uums')
-                }
+                server: apiServer
             }
         }),
         new webpack.optimize.ModuleConcatenationPlugin(),

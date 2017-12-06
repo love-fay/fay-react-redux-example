@@ -8,20 +8,20 @@ import Icon from 'antd/lib/icon';
 import Input from 'antd/lib/input';
 import Button from 'antd/lib/button';
 import Checkbox from 'antd/lib/checkbox';
-import 'FayAntd/card/style/index.js';
-import 'FayAntd/form/style/index.js';
-import 'FayAntd/input/style/index.js';
-import 'FayAntd/button/style/index.js';
-import 'FayAntd/checkbox/style/index.js';
-const FormItem = Form.Item;
-import style from './style.css';
-import Params from '../../../lib/query/params';
-import PropTypes from 'prop-types';
 import Spin from 'antd/lib/spin';
 import Alert from 'antd/lib/alert';
-import 'FayAntd/spin/style/index.js';
-import 'FayAntd/alert/style/index.js';
-import {appName} from '../../appInfo';
+import 'FayAntd/card';
+import 'FayAntd/form';
+import 'FayAntd/input';
+import 'FayAntd/button';
+import 'FayAntd/checkbox';
+import 'FayAntd/spin';
+import 'FayAntd/alert';
+const FormItem = Form.Item;
+import style from './style.css';
+import {getQueryString} from 'FayQuery/params';
+import PropTypes from 'prop-types';
+import {appName} from 'FayCore/appInfo';
 import cookie from 'react-cookie';
 
 class LoginForm extends Component {
@@ -47,7 +47,7 @@ class LoginForm extends Component {
         this.setState({showMessage: 'none', message: '', messageType: ''});
         const { location, history } = this.props;
         let nextPathname = '';
-        let returnPath = Params.getQueryString('returnPath');
+        let returnPath = getQueryString('returnPath');
         if (location.state && location.state.nextPathname) {
             nextPathname = location.state.nextPathname;
         } else if (returnPath) {

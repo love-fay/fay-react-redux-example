@@ -10,6 +10,10 @@ import {initStore, Login} from '../../../base';
 let store = initStore();
 import {view as Uums} from '../uums';
 import {Layout12} from '../../../layout';
+import 'FayAntd';
+import LocaleProvider from 'antd/lib/locale-provider';
+import zhCn from 'antd/lib/locale-provider/zh_CN';
+import 'FayAntd/locale-provider';
 
 const history = createBrowserHistory();
 
@@ -23,14 +27,16 @@ const HomePage = () => {
 
 export default () => {
     return (
-        <Provider store={store}>
-            <ConnectedRouter history={history}>
-                <Switch>
-                    <Route exact strict path="/" component={HomePage}/>
-                    <Route path='/login' component={Login}/>
-                    <Route path='/uums/' component={Uums}/>
-                </Switch>
-            </ConnectedRouter>
-        </Provider>
+        <LocaleProvider locale={zhCn}>
+            <Provider store={store}>
+                <ConnectedRouter history={history}>
+                    <Switch>
+                        <Route exact strict path="/" component={HomePage}/>
+                        <Route path='/login' component={Login}/>
+                        <Route path='/uums/' component={Uums}/>
+                    </Switch>
+                </ConnectedRouter>
+            </Provider>
+        </LocaleProvider>
     );
 }

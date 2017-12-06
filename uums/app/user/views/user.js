@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import Card from 'antd/lib/card';
-import 'FayAntd/card/style/index.js';
+import 'FayAntd/card';
 import UserTable from './userTable';
 
 export default () => {

@@ -4,7 +4,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import {findAppForPageFetch, findAppForPageSuccess, findAppForPageError} from './actions';
 import {FIND_APP_FOR_PAGE} from './actionTypes';
-import {app} from '../../../api';
+import {app} from 'FayApi';
 
 function appPage() {
     /**

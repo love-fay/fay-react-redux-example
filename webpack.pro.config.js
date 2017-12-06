@@ -6,10 +6,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
-const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const webpackModule = require('./base/config/webpack/pro/module');
+const apiServer = require('./base/config/webpack/pro/apiServer');
+const resolve = require('./base/config/webpack/pro/resolve');
 
 module.exports = {
 
@@ -21,16 +22,7 @@ module.exports = {
     },
     module: webpackModule,
 
-    resolve: {
-        modules: [
-            "node_modules",
-            path.resolve(__dirname, 'platform/app')
-        ],
-        extensions: ['.js', '.json', '.css', 'less'],
-        alias: {
-            FayAntd: path.resolve(__dirname, 'lib/antd/lib/'),
-        }
-    },
+    resolve: resolve,
 
     plugins: [
         new CleanPlugin(['dist/pro'], {
@@ -43,9 +35,7 @@ module.exports = {
                 NODE_ENV: JSON.stringify('production'),
             },
             'target': {
-                server: {
-                    uums: JSON.stringify('http://192.168.210.192:7000/uums')
-                }
+                server: apiServer
             }
         }),
         new webpack.optimize.ModuleConcatenationPlugin(),

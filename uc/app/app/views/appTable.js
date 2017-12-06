@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import Table from 'antd/lib/table';
-import 'FayAntd/table/style/index.js';
+import 'FayAntd/table';
 import {connect} from 'react-redux';
 import {findAppForPage} from '../actions';
 import {FIND_APP_FOR_PAGE_FETCH, FIND_APP_FOR_PAGE_SUCCESS, FIND_APP_FOR_PAGE_ERROR} from '../actionTypes';
