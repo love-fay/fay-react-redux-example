@@ -7,6 +7,8 @@
   </a>
 </p>
 
+_因大部分库版本较新，部分库没有跟上，启动后会报一些错误，可以忽略，只要启动完毕的那一刻显示的是webpack: Compiled successfully.便是执行成功！_
+
 > 本地需要安装npm，建议更新到最新版本
 
 > <code>npm start</code>运行整个项目
