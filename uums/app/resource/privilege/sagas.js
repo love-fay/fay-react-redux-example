@@ -6,7 +6,7 @@ import {
     findPrivilegeFetch, findPrivilegeSuccess, findPrivilegeError
 } from './actions';
 import {FIND_PRIVILEGE} from './actionTypes';
-import {privilege} from 'FayApi';
+import {privilege} from 'fay-base/api';
 
 function findPrivilege(data) {
     /**

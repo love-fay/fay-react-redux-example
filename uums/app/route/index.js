@@ -6,14 +6,14 @@ import {Provider} from 'react-redux';
 import {Switch, Route} from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 import { ConnectedRouter} from 'react-router-redux';
-import {initStore, Login} from '../../../base';
+import {initStore, Login} from 'fay-base';
 let store = initStore();
 import {view as Uums} from '../uums';
 import {Layout12} from '../../../layout';
-import 'FayAntd';
+import 'fay-antd';
 import LocaleProvider from 'antd/lib/locale-provider';
 import zhCn from 'antd/lib/locale-provider/zh_CN';
-import 'FayAntd/locale-provider';
+import 'fay-antd/locale-provider';
 
 const history = createBrowserHistory();
 

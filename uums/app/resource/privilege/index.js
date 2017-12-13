@@ -7,14 +7,6 @@ import load from 'bundle-loader?lazy&name=Privilege!./lazy';
 import reducer from './reducer';
 import sagas from './sagas';
 
-const view = (props) => {
-    return (
-        <Bundle load={load}>
-            {(View) => {
-                return <View {...props}/>
-            }}
-        </Bundle>
-    );
-};
+const view = (props) => <Bundle load={load}>{(View) => <View {...props}/>}</Bundle>;
 
 export {view, reducer, sagas};

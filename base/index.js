@@ -5,5 +5,6 @@ import * as request from './request';
 import * as appInfo from './appInfo';
 import {view as Login} from './login';
 import * as error from './error';
+import * as api from './api';
 
-export {Bundle, initStore, user, request, appInfo, Login, error};
+export {Bundle, initStore, user, request, appInfo, Login, error, api};

@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import Modal from 'antd/lib/modal';
-import 'FayAntd/modal';
+import 'fay-antd/modal';
 import PropTypes from 'prop-types';
 
 class AModal extends Component {

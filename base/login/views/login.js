@@ -10,18 +10,18 @@ import Button from 'antd/lib/button';
 import Checkbox from 'antd/lib/checkbox';
 import Spin from 'antd/lib/spin';
 import Alert from 'antd/lib/alert';
-import 'FayAntd/card';
-import 'FayAntd/form';
-import 'FayAntd/input';
-import 'FayAntd/button';
-import 'FayAntd/checkbox';
-import 'FayAntd/spin';
-import 'FayAntd/alert';
+import 'fay-antd/card';
+import 'fay-antd/form';
+import 'fay-antd/input';
+import 'fay-antd/button';
+import 'fay-antd/checkbox';
+import 'fay-antd/spin';
+import 'fay-antd/alert';
 const FormItem = Form.Item;
 import style from './style.css';
-import {getQueryString} from 'FayQuery/params';
+import {getQueryString} from 'fay-query/params';
 import PropTypes from 'prop-types';
-import {appName} from 'FayCore/appInfo';
+import {appName} from 'fay-base/appInfo';
 import cookie from 'react-cookie';
 
 class LoginForm extends Component {

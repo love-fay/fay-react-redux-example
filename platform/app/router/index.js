@@ -8,15 +8,15 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import { ConnectedRouter} from 'react-router-redux';
 import {Layout12} from '../../../layout';
 import {RouterPaths} from '../constants';
-import {initStore, Login, error} from '../../../base';
+import {initStore, Login, error} from 'fay-base';
 let store = initStore();
 
 import Uums from '../../../uums';
 import Uc from '../../../uc';
-import 'FayAntd';
+import 'fay-antd';
 import LocaleProvider from 'antd/lib/locale-provider';
 import zhCn from 'antd/lib/locale-provider/zh_CN';
-import 'FayAntd/locale-provider';
+import 'fay-antd/locale-provider';
 
 const history = createBrowserHistory();
 

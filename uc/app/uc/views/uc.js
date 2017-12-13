@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import {view as App} from '../../app';
 import {RouterPaths} from '../../constants';
-import { error, user } from '../../../../base';
+import { error, user } from 'fay-base';
 import { Layout12 } from '../../../../layout';
 
 class Uc extends Component{

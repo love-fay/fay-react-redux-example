@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import Menu from 'antd/lib/menu';
 import Icon from 'antd/lib/icon';
-import 'FayAntd/menu';
+import 'fay-antd/menu';
 const SubMenu = Menu.SubMenu;
 import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';

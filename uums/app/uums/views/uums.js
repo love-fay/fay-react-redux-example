@@ -3,11 +3,10 @@
  */
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
-import {user} from '../../../../base';
 import { withRouter } from 'react-router-dom';
 import {view as User} from '../../user';
 import {RouterPaths} from '../../constants';
-import { error } from '../../../../base';
+import { user, error } from 'fay-base';
 import { Layout12 } from '../../../../layout';
 
 require.ensure([], (require) => {

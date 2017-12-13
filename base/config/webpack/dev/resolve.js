@@ -7,11 +7,8 @@ module.exports = {
     ],
     extensions: ['.js', '.json', '.css', 'less'],
     alias: {
-        FayAntd: path.resolve(__dirname, '../../../lib/antd/style/'),
-        FayQuery: path.resolve(__dirname, '../../../lib/query/'),
-        FayApi: path.resolve(__dirname, '../../../api/'),
-        FayError: path.resolve(__dirname, '../../../error/'),
-        FayLogin: path.resolve(__dirname, '../../../login/'),
-        FayCore: path.resolve(__dirname, '../../../'),
+        'fay-antd': path.resolve(__dirname, '../../../../node_local_modules/fay-antd/style/'),
+        'fay-query': path.resolve(__dirname, '../../../../node_local_modules/fay-query/'),
+        'fay-base': path.resolve(__dirname, '../../../')
     }
 };

@@ -5,8 +5,8 @@
 import React from 'react';
 import Row from 'antd/lib/row';
 import Col from 'antd/lib/col';
-import "FayAntd/row";
-import 'FayAntd/col';
+import "fay-antd/row";
+import 'fay-antd/col';
 import {NavTop, NavLeft} from '../../navigation';
 import './style.css';
 import PropTypes from 'prop-types';

@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import Card from 'antd/lib/card';
-import 'FayAntd/card';
+import 'fay-antd/card';
 import AppTable from './appTable';
 
 export default () => {

@@ -5,12 +5,6 @@ import React from 'react';
 import {Bundle} from '../../../base';
 import load from 'bundle-loader?lazy&name=App!./lazy';
 
-const view = (props) => {
-    return (
-        <Bundle load={load}>
-            {(View) => <View {...props}/>}
-        </Bundle>
-    );
-};
+const view = (props) => <Bundle load={load}>{(View) => <View {...props}/>}</Bundle>;
 
 export {view};

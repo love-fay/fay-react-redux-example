@@ -4,8 +4,8 @@
 import React from 'react';
 import Row from 'antd/lib/row';
 import Col from 'antd/lib/col';
-import 'FayAntd/row';
-import 'FayAntd/col';
+import 'fay-antd/row';
+import 'fay-antd/col';
 import {Link} from 'react-router-dom';
 
 export default () => {

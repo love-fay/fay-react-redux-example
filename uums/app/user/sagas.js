@@ -2,7 +2,7 @@
  * Created by feichongzheng on 17/9/28.
  */
 import { call, put, takeLatest } from 'redux-saga/effects';
-import {user} from 'FayApi';
+import {user} from 'fay-base/api';
 import {findUserForPageFetch, findUserForPageSuccess, findUserForPageError} from './actions';
 import {FIND_USER_FOR_PAGE} from './actionTypes';
 
